@@ -15,6 +15,9 @@ int main()
         }
     }
 
+    // 使用队列来存储输入的数字
+    // 按顺序弹出前面的数字
+    // 如果 指数为0 且 没有任何输出的话，输出 0 0
     unsigned size = nums.size();
     unsigned flag = 1;
     while (!nums.empty()) {
