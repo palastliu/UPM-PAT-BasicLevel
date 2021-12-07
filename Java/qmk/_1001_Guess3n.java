@@ -11,9 +11,8 @@ public class _1001_Guess3n{
             if(number%2==0){
                 number=number/2;
             }
-            else {
+            else 
                 number = (3 * number + 1) / 2;
-            }
             counter++;
         }
 
