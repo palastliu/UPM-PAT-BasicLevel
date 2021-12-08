@@ -8,11 +8,13 @@ int main27()
     cin >> n >> symble;
 
     // 算出 需要打印的星号数量 和 行数
-    int temp = 0, all_sysmbles = 0, rows = 0;
+    // 循环求出 1-n 之间的 奇数，并每次 判断 (奇数总和) * 2 - 1 是否 小于等于 n，
+    // 如果是，就更新 星号的数量 行数，否则就结束，n-all_symbols 就是 没有出现在沙漏里的
+    int temp = 0, all_symbols = 0, rows = 0;
     for (int i = 1; i <= n; i += 2) {
         temp += i;
         if (temp * 2 - 1 <= n) {
-            all_sysmbles = temp * 2 - 1;
+            all_symbols = temp * 2 - 1;
             rows = i;
         } else {
             break;
@@ -40,7 +42,7 @@ int main27()
             cout << symble;
         }
 
-        if (output_symbles <= all_sysmbles / 2) {
+        if (output_symbles <= all_symbols / 2) {
             row_symbles -= 2;
         } else {
             row_symbles += 2;
