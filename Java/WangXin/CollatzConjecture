@@ -1,0 +1,31 @@
+package PATBasicLevel;
+
+import java.util.Scanner;
+
+public class CollatzConjecture {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		
+		int count = 0;		//Record the number of operations
+		System.out.println("please enter n: ");
+		int n = in.nextInt();		//get n
+		
+		
+		while(n != 1) {		//If n is not 1, keep looping
+			
+			if(n%2==0) {		//If n is even, divide by 2
+				n = n/2;
+				count = count + 1;
+			}else {				//If n is an odd number, then 3*n+1 is divided by 2
+				n = (3*n+1)/2;
+				count = count + 1;
+			}
+			
+		}
+
+		System.out.println(count);		//output the count
+	}
+	
+}
