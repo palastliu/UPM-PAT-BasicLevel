@@ -1,0 +1,34 @@
+package PATBasicLevel;
+
+import java.util.Scanner;
+
+public class DigitalSum {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		
+		String[] pinYin = {"ling", "yi", "er", "san", "si", "wu", "liu", "qi", "ba", "jiu"};
+		
+		String input = in.next();
+		int sum = 0;
+
+		//把输入的string拆分为单个数字，算出总和
+		for(int i = 0; i < input.length(); i++) {
+			char transit = input.charAt(i);
+			sum = sum + (transit - '0');
+		}
+		
+		//把int的总和转换为char数组，输出对应的拼音
+		char[] sumArray = String.valueOf(sum).toCharArray();
+		for(int i = 0; i < sumArray.length; i++) {
+			//如果是最后一个字符，则后面不加空格
+			if(i == sumArray.length - 1) {
+				System.out.print(pinYin[sumArray[i]-'0']);
+			}else {
+				System.out.print(pinYin[sumArray[i]-'0'] + " ");
+			}
+			
+		}
+	}
+}
