@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int input = sc.nextInt();               //get input
+
+        int time=0;
+        while(input!=1){                        //if input not equal to 1 then gtet into loop
+            if(input%2==0){                     //if input is even
+                input = input/2;
+            }else{                              //if input is odd
+                input = (3*input+1)/2;
+            }
+            time++;                             //each step time plus 1
+        }
+        System.out.print(time);                 // output the time
+    }
+}
