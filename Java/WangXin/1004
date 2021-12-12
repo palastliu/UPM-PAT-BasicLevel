@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class MarksRanking {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		int number = Integer.parseInt(in.nextLine()); //必须写成这种格式，不然会影响下面的String语句输入
+		
+		//把数据拆分后分别放入名字，学号和成绩的集合中
+		String[] input = new String[number];
+		String[] names = new String[number];
+		String[] ids = new String[number];
+		int[] marks =  new int[number];
+		for(int i = 0; i < number; i++) {
+			input[i] = in.nextLine();
+			String[] transit = input[i].split(" ");
+			names[i] = transit[0];
+			ids[i] = transit[1];
+			marks[i] = Integer.parseInt(transit[2]);
+		}
+		
+		
+		//找到最小和最大的成绩，并且记录位置是第几个
+		int min = marks[0];
+		int minPosition = 0;
+		int max = marks[0];
+		int maxPosition = 0;
+		for(int i = 0; i < number; i++){
+			if(min>marks[i]){
+				min = marks[i];
+				minPosition = i;
+			}
+			if(max<marks[i]){
+				max = marks[i];
+				maxPosition = i;
+			}
+		}
+		
+		//通过位置输出名字学号
+		System.out.println(names[maxPosition] + " " + ids[maxPosition]);
+		System.out.println(names[minPosition] + " " + ids[minPosition]);
+	}
+}
