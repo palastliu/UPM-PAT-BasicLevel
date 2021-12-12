@@ -1,0 +1,24 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);        //输入
+        int T = sc.nextInt();                       //输入几行的整数 小于等于10
+        for (int i=0;i<T;i++){                      //分别输入 a b c 并循环t次
+            BigInteger A = sc.nextBigInteger();
+            BigInteger B = sc.nextBigInteger();
+            BigInteger C = sc.nextBigInteger();
+            sc.nextLine();
+            BigInteger b1 = A.add(B);
+            
+            if(b1.compareTo(C)>0)
+                System.out.println("Case #" + (i+1) + ": true");    // 比较  大于的输出 下位为小于的输出
+            else
+                System.out.println("Case #" + (i+1) + ": false");
+            
+        }
+	}
+
+}
